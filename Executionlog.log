@@ -1,0 +1,191 @@
+(faiss-stable-env) PS C:\Users\DELL\Desktop\EAG\Assignment - 9\S9-bu2> python agent.py
+🧠 Cortex-R Agent Ready
+in MultiMCP initialize
+→ Scanning tools from: mcp_server_1.py in C:\Users\DELL\Desktop\EAG\Assignment - 9\S9-bu2
+Connection established, creating session...
+[agent] Session created, initializing...
+[agent] MCP session initialized
+→ Tools received: ['add', 'subtract', 'multiply', 'divide', 'power', 'cbrt', 'factorial', 'remainder', 'sin', 'cos', 'tan', 'mine', 'create_thumbnail', 'strings_to_chars_to_int', 'int_list_to_exponential_sum', 'fibonacci_numbers', 'run_python_sandbox', 'run_shell_command', 'run_sql_query']
+→ Scanning tools from: mcp_server_2.py in C:\Users\DELL\Desktop\EAG\Assignment - 9\S9-bu2
+Connection established, creating session...
+[agent] Session created, initializing...
+[agent] MCP session initialized
+→ Tools received: ['search_stored_documents', 'convert_webpage_url_into_markdown', 'extract_pdf']
+→ Scanning tools from: mcp_server_3.py in C:\Users\DELL\Desktop\EAG\Assignment - 9\S9-bu2
+Connection established, creating session...
+[agent] Session created, initializing...
+[agent] MCP session initialized
+→ Tools received: ['duckduckgo_search_results']
+→ Scanning tools from: modules/mcp_server_memory.py in C:\Users\DELL\Desktop\EAG\Assignment - 9\S9-bu2
+Connection established, creating session...
+[agent] Session created, initializing...
+[agent] MCP session initialized
+→ Tools received: ['get_current_conversations', 'search_historical_conversations']
+🧑 What do you want to solve today? → Which plastic-based product category had the highest compound annual growth rate (CAGR) in exports from India between 2009-10 and 2018-19, and what was that rate? Search local documents
+🔁 Step 1/10 starting...
+[02:24:08] [perception] Raw output: ```json
+{
+  "intent": "Identify the plastic product category with the highest CAGR in exports from India between specified years.",
+  "entities": ["plastic", "CAGR", "exports", "India", "2009-10", "2018-19"],
+  "tool_hint": "document search with keyword extraction",
+  "selected_servers": ["documents"]
+}
+```
+[perception] intent='Identify the plastic product category with the highest CAGR in exports from India between specified years.' entities=['plastic', 'CAGR', 'exports', 'India', '2009-10', '2018-19'] tool_hint='document search with keyword extraction' tags=[] selected_servers=['documents']
+[02:24:08] [loop] Tools selected — sending selected tools to the model
+[02:24:11] [heuristics] Applied output heuristics: ['Extracted code from markdown block']
+[02:24:11] [heuristics] Applied plan fixes: Extracted code from markdown block
+[02:24:11] [heuristics] Plan was modified to fix issues
+[plan] import json
+async def solve():
+    # Need to search the stored documents to find the plastic product category with the highest CAGR in exports from India between 2009-10 and 2018-19.
+    """Search documents to get relevant extracts. Usage: input={"input": {"query": "your query"}}"""
+    input = {"input": {"query": "plastic product category CAGR exports India 2009-10 2018-19"}}
+    result = await mcp.call_tool('search_stored_documents', input)
+    return f"FURTHER_PROCESSING_REQUIRED: {result}"
+[loop] Detected solve() plan — running sandboxed...
+[action] 🔍 Entered run_python_sandbox()
+
+Result:
+ FURTHER_PROCESSING_REQUIRED: meta=None content=[TextContent(type='text', text="of human hair. India’s share in the world-wide import market of human hair & related products was 7.0% in 2018. **Pipes & fittings, of plastics** Provided below are the top-5 importing countries of pipes and fittings of plastics in the world, and India’s share in these markets. |Top importing countries ....[TRUNCATED]
+🔁 Step 2/10 starting...
+[02:24:54] [perception] Raw output: ```json
+{
+  "intent": "Identify the plastic-based product category with the highest CAGR in exports from India between 2009-10 and 2018-19 and its rate.",
+  "entities": [
+    "plastic-based product category",
+    "highest CAGR",
+    "exports from India",
+    "2009-10",
+    "2018-19"
+  ],
+  "tool_hint": null,
+  "selected_servers": [
+    "documents"
+  ]
+}
+```
+[perception] intent='Identify the plastic-based product category with the highest CAGR in exports from India between 2009-10 and 2018-19 and its rate.' entities=['plastic-based product category', 'highest CAGR', 'exports from India', '2009-10', '2018-19'] tool_hint=None tags=[] selected_servers=['documents']
+[02:24:54] [loop] Tools selected — sending selected tools to the model
+[02:24:57] [heuristics] Applied output heuristics: ['Extracted code from markdown block']
+[02:24:57] [heuristics] Applied plan fixes: Extracted code from markdown block
+[02:24:57] [heuristics] Plan was modified to fix issues
+[plan] import json
+async def solve():
+    # The previous search provided the necessary information to answer the question.
+    # The highest CAGR was for Woven sacks and FIBC (22.9%).
+    return f"FINAL_ANSWER: Woven sacks and FIBC had the highest compound annual growth rate (CAGR) in exports from India between 2009-10 and 2018-19, with a rate of 22.9%."    
+[loop] Detected solve() plan — running sandboxed...
+[action] 🔍 Entered run_python_sandbox()
+
+Result:
+ FINAL_ANSWER: Woven sacks and FIBC had the highest compound annual growth rate (CAGR) in exports from India between 2009-10 and 2018-19, with a rate of 22.9%.
+
+💡 Final Answer: Woven sacks and FIBC had the highest compound annual growth rate (CAGR) in exports from India between 2009-10 and 2018-19, with a rate of 22.9%.
+[02:24:57] [history] Added conversation to history: Which plastic-based product category had the highest compound annual growth rate (CAGR) in exports from India between 2009-10 and 2018-19, and what was that rate? Search local documents
+🧑 What do you want to solve today? → Summarize the key measures DLF has taken to mitigate the risks associated with physical impacts of climate change. Search local documents
+🔁 Step 1/10 starting...
+[02:25:17] [perception] Raw output: ```json
+{
+  "intent": "Summarize DLF's climate change risk mitigation measures from local documents.",
+  "entities": ["DLF", "climate change", "risk mitigation", "physical impacts"],
+  "tool_hint": "documents",
+  "selected_servers": ["documents"]
+}
+```
+[perception] intent="Summarize DLF's climate change risk mitigation measures from local documents." entities=['DLF', 'climate change', 'risk mitigation', 'physical impacts'] tool_hint='documents' tags=[] selected_servers=['documents']
+[02:25:17] [loop] Tools selected — sending selected tools to the model
+[02:25:19] [heuristics] Applied output heuristics: ['Extracted code from markdown block']
+[02:25:19] [heuristics] Applied plan fixes: Extracted code from markdown block
+[02:25:19] [heuristics] Plan was modified to fix issues
+[plan] import json
+async def solve():
+    # Using 'search_stored_documents' to find the documents relevant to DLF's climate change mitigation measures.
+    """Search documents to get relevant extracts. Usage: input={"input": {"query": "your query"}}"""
+    input = {"input": {"query": "DLF climate change physical risk mitigation measures"}}
+    result = await mcp.call_tool('search_stored_documents', input)
+    return f"FURTHER_PROCESSING_REQUIRED: {result}"
+[loop] Detected solve() plan — running sandboxed...
+[action] 🔍 Entered run_python_sandbox()
+
+Result:
+ FURTHER_PROCESSING_REQUIRED: meta=None content=[TextContent(type='text', text='addressed by a dedicated team of trained customer service personnel. DLF has implemented a robust complaint management system, implemented through a digital application (app), where customers can register their complaints. Every customer issue is recorded in the app for tracking and resolving within a....[TRUNCATED]
+🔁 Step 2/10 starting...
+[02:25:38] [perception] Raw output: ```json
+{
+  "intent": "Summarize DLF's measures to mitigate climate change physical risks based on local documents.",
+  "entities": ["DLF", "climate change", "physical risk mitigation measures"],
+  "tool_hint": "No further tool hint needed.",
+  "selected_servers": ["documents"]
+}
+```
+[perception] intent="Summarize DLF's measures to mitigate climate change physical risks based on local documents." entities=['DLF', 'climate change', 'physical risk mitigation measures'] tool_hint='No further tool hint needed.' tags=[] selected_servers=['documents']
+[02:25:38] [loop] Tools selected — sending selected tools to the model
+[02:25:40] [heuristics] Applied output heuristics: ['Extracted code from markdown block']
+[02:25:40] [heuristics] Applied plan fixes: Extracted code from markdown block
+[02:25:40] [heuristics] Plan was modified to fix issues
+[plan] async def solve():
+    # The previous tool call provided sufficient information to summarize DLF's climate change mitigation measures.
+    return f"FINAL_ANSWER: DLF mitigates the physical impacts of climate change by mapping physical risks and incorporating adaptation measures. Buildings are designed for a higher seismic zone, and rainwater harvesting is implemented to prevent flooding. Buildings also comply with LEED Green Building Certification norms."
+[loop] Detected solve() plan — running sandboxed...
+[action] 🔍 Entered run_python_sandbox()
+
+Result:
+ FINAL_ANSWER: DLF mitigates the physical impacts of climate change by mapping physical risks and incorporating adaptation measures. Buildings are designed for a higher seismic zone, and rainwater harvesting is implemented to prevent flooding. Buildings also comply with LEED Green Building Certification norms.
+
+💡 Final Answer: DLF mitigates the physical impacts of climate change by mapping physical risks and incorporating adaptation measures. Buildings are designed for a higher seismic zone, and rainwater harvesting is implemented to prevent flooding. Buildings also comply with LEED Green Building Certification norms.
+[02:25:40] [history] Added conversation to history: Summarize the key measures DLF has taken to mitigate the risks associated with physical impacts of climate change. Search local documents
+🧑 What do you want to solve today? → What is the fine for a Light Motor Vehicle (LMV) driver caught using a mobile phone while driving in Bengaluru, and how does it change for repeat offences? Search local documents
+🔁 Step 1/10 starting...
+[02:26:01] [perception] Raw output: ```json
+{
+  "intent": "Find the fine amount for using a mobile phone while driving an LMV in Bengaluru and how it changes for repeat offences, specifically from local documents.",       
+  "entities": ["fine", "Light Motor Vehicle (LMV)", "mobile phone", "driving", "Bengaluru", "repeat offences"],
+  "tool_hint": "documents",
+  "selected_servers": ["documents", "websearch"]
+}
+```
+[perception] intent='Find the fine amount for using a mobile phone while driving an LMV in Bengaluru and how it changes for repeat offences, specifically from local documents.' entities=['fine', 'Light Motor Vehicle (LMV)', 'mobile phone', 'driving', 'Bengaluru', 'repeat offences'] tool_hint='documents' tags=[] selected_servers=['documents', 'websearch']
+[02:26:02] [loop] Tools selected — sending selected tools to the model
+[02:26:04] [heuristics] Applied output heuristics: ['Extracted code from markdown block']
+[02:26:04] [heuristics] Applied plan fixes: Extracted code from markdown block
+[02:26:04] [heuristics] Plan was modified to fix issues
+[plan] import json
+async def solve():
+    # The query asks to search local documents for the fine for using a mobile phone while driving in Bengaluru.
+    """Search documents to get relevant extracts. Usage: input={"input": {"query": "your query"}}"""
+    input = {"input": {"query": "fine for using mobile phone while driving LMV Bengaluru"}}
+    result = await mcp.call_tool('search_stored_documents', input)
+    return f"FURTHER_PROCESSING_REQUIRED: {result}"
+[loop] Detected solve() plan — running sandboxed...
+[action] 🔍 Entered run_python_sandbox()
+
+Result:
+ FURTHER_PROCESSING_REQUIRED: meta=None content=[TextContent(type='text', text='5/12/25, 12:43 AM Bengaluru Traffic Police - Spot-fines [LOGIN](https://btp.karnataka.gov.in/back/index) [KANNADA](https://btp.karnataka.gov.in/117/spot-fines/kn) VISUALLY CHALLENGED **Image:** [No caption returned] **Image:** [No caption returned] ###### Police, Govt. of Karnataka \uf068 A \uf067 \uf021 **Image:** [No caption returned] **Image:** [No caption returned] **Image:** [No caption returned] ###### \uf060 #### \uf09a \uf16d \uf232 ## Spot Fines #### ....[TRUNCATED]
+🔁 Step 2/10 starting...
+[02:26:25] [perception] Raw output: ```json
+{
+  "intent": "Find the fine for using a mobile phone while driving an LMV in Bengaluru and how it changes for repeat offenses.",
+  "entities": ["fine", "mobile phone", "LMV", "Bengaluru", "repeat offenses"],
+  "tool_hint": "The document contains the answer.",
+  "selected_servers": []
+}
+```
+[perception] intent='Find the fine for using a mobile phone while driving an LMV in Bengaluru and how it changes for repeat offenses.' entities=['fine', 'mobile phone', 'LMV', 'Bengaluru', 'repeat offenses'] tool_hint='The document contains the answer.' tags=[] selected_servers=[]
+[02:26:25] [loop] ⚠️ No tools selected
+[02:26:28] [heuristics] Applied output heuristics: ['Extracted code from markdown block']
+[02:26:28] [heuristics] Applied plan fixes: Extracted code from markdown block
+[02:26:28] [heuristics] Plan was modified to fix issues
+[plan] async def solve():
+    # The document contains the answer, so we can extract the relevant information.
+    # LMV - USING MOBILE WHILE DRIVING/RIDING   | 230 (A) K.M.V. RULES R/W 177 I.M.V. ACT | First time 3000/-, & subsequent offences 10000/-
+    return f"FINAL_ANSWER: The fine for a Light Motor Vehicle (LMV) driver caught using a mobile phone while driving in Bengaluru is ₹3000 for the first offense. For subsequent offenses, the fine increases to ₹10000."
+[loop] Detected solve() plan — running sandboxed...
+[action] 🔍 Entered run_python_sandbox()
+
+Result:
+ FINAL_ANSWER: The fine for a Light Motor Vehicle (LMV) driver caught using a mobile phone while driving in Bengaluru is ₹3000 for the first offense. For subsequent offenses, the fine increases to ₹10000.
+
+💡 Final Answer: The fine for a Light Motor Vehicle (LMV) driver caught using a mobile phone while driving in Bengaluru is ₹3000 for the first offense. For subsequent offenses, the fine increases to ₹10000.
+[02:26:28] [history] Added conversation to history: What is the fine for a Light Motor Vehicle (LMV) driver caught using a mobile phone while driving in Bengaluru, and how does it change for repeat offences? Search local documents
+🧑 What do you want to solve today? → exit
