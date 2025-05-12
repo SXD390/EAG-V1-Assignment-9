@@ -127,3 +127,7 @@ if __name__ == "__main__":
 # which course are we teaching on Canvas LMS? "H:\DownloadsH\How to use Canvas LMS.pdf"
 # Summarize this page: https://theschoolof.ai/
 # What is the log value of the amount that Anmol singh paid for his DLF apartment via Capbridge?
+
+#Which plastic-based product category had the highest compound annual growth rate (CAGR) in exports from India between 2009-10 and 2018-19, and what was that rate? Search local documents
+#Summarize the key measures DLF has taken to mitigate the risks associated with physical impacts of climate change. Search local documents
+#What is the fine for a Light Motor Vehicle (LMV) driver caught using a mobile phone while driving in Bengaluru, and how does it change for repeat offences? Search local documents
