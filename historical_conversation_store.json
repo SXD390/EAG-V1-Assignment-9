@@ -88,5 +88,23 @@
     "query": "Which plastic-based product category had the highest compound annual growth rate (CAGR) in exports from India between 2009-10 and 2018-19, and what was that rate? Search local documents",
     "answer": "FINAL_ANSWER: The plastic-based product category with the highest compound annual growth rate (CAGR) in exports from India between 2009-10 and 2018-19 was Woven sacks and FIBC, with a rate of 22.9%.",
     "final_answer": "The plastic-based product category with the highest compound annual growth rate (CAGR) in exports from India between 2009-10 and 2018-19 was Woven sacks and FIBC, with a rate of 22.9%."
+  },
+  {
+    "timestamp": "2025-05-13T02:24:57.077310",
+    "query": "Which plastic-based product category had the highest compound annual growth rate (CAGR) in exports from India between 2009-10 and 2018-19, and what was that rate? Search local documents",
+    "answer": "FINAL_ANSWER: Woven sacks and FIBC had the highest compound annual growth rate (CAGR) in exports from India between 2009-10 and 2018-19, with a rate of 22.9%.",
+    "final_answer": "Woven sacks and FIBC had the highest compound annual growth rate (CAGR) in exports from India between 2009-10 and 2018-19, with a rate of 22.9%."
+  },
+  {
+    "timestamp": "2025-05-13T02:25:40.940891",
+    "query": "Summarize the key measures DLF has taken to mitigate the risks associated with physical impacts of climate change. Search local documents",
+    "answer": "FINAL_ANSWER: DLF mitigates the physical impacts of climate change by mapping physical risks and incorporating adaptation measures. Buildings are designed for a higher seismic zone, and rainwater harvesting is implemented to prevent flooding. Buildings also comply with LEED Green Building Certification norms.",
+    "final_answer": "DLF mitigates the physical impacts of climate change by mapping physical risks and incorporating adaptation measures. Buildings are designed for a higher seismic zone, and rainwater harvesting is implemented to prevent flooding. Buildings also comply with LEED Green Building Certification norms."
+  },
+  {
+    "timestamp": "2025-05-13T02:26:28.731163",
+    "query": "What is the fine for a Light Motor Vehicle (LMV) driver caught using a mobile phone while driving in Bengaluru, and how does it change for repeat offences? Search local documents",
+    "answer": "FINAL_ANSWER: The fine for a Light Motor Vehicle (LMV) driver caught using a mobile phone while driving in Bengaluru is ₹3000 for the first offense. For subsequent offenses, the fine increases to ₹10000.",
+    "final_answer": "The fine for a Light Motor Vehicle (LMV) driver caught using a mobile phone while driving in Bengaluru is ₹3000 for the first offense. For subsequent offenses, the fine increases to ₹10000."
   }
 ]
